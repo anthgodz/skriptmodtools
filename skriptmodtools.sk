@@ -1,0 +1,31 @@
+#WARNING! IMPLEMENTING THIS SCRIPT WILL REQUIRE A SERVER RESTART AFTER ADDING! Otherwise you will be unable to chat until completed
+on damage:
+    victim is player
+    attacker has permission "minecraft.command.kick"
+    if attacker is holding a stick named "KickStick":
+        set {modtools.%attacker%.victim} to victim
+        set {modtools.%attacker%.action} to "kick"
+        send "&aEnter reason" to attacker
+    else if attacker is holding a brick named "BanBrick":
+        attacker has permission "minecraft.command.ban"
+        set {modtools.%attacker%.victim} to victim
+        set {modtools.%attacker%.action} to "ban"
+        send "&aEnter reason" to attacker
+		
+on chat:
+   if {modtools.%player%.action} is "kick" or "ban":
+      make player execute command "%{modtools.%player%.action}% %{modtools.%player%.victim}% %message%"
+      set {modtools.%player%.action} to ""
+      set {modtools.%player%.victim} to ""
+   else if {modtools.%player%.action} is "":
+   else:
+      cancel event
+      send "&cError in script!"
+	  
+	  
+	  
+	  
+	  
+on join:
+  set {modtools.%player%.action} to ""
+  set {modtools.%player%.victim} to ""
