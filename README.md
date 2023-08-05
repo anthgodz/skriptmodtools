@@ -9,7 +9,7 @@ How to use items:
   Simply hold the item of your choice and hit the target with it when needed.
 Items:
   BanBrick (NOT BRICK BLOCK!): Bans the target if attacker has valid permissions after reason is provided
-  KickStick: Kickss the target if attacker has valid permissions after reason is provided
+  KickStick: Kicks the target if attacker has valid permissions after reason is provided
 Permissions required for using these tools:
   Kick (KickStick): minecraft.command.kick
   Ban (BanBrick): minecraft.command.ban
