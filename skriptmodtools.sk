@@ -20,7 +20,7 @@ on chat:
    else if {modtools.%player%.action} is "":
    else:
       cancel event
-      send "&cError in script!"
+      send "&cError in script! (Try restarting the server)"
 	  
 	  
 	  
